@@ -284,4 +284,55 @@ public class Functions {
 		//System.out.println(tmp2);
 		return tmp2;
 	}
+	public static int solution(int N, int K) {
+
+		String temp = Integer.toString(N);
+		char[] actualValue = temp.toCharArray();
+
+
+		int first = actualValue[0] - 48;
+		int second = actualValue[1] - 48;
+		int third = actualValue[2] - 48;
+
+		if (K > 0 && first <= 9) {
+			while (first < 9 && K > 0) {
+				first += 1;
+				K--;
+			}
+
+		}
+		if (K > 0 && second <= 9) {
+			while (second < 9 && K > 0) {
+				second += 1;
+				K--;
+				//first++;
+			}
+
+		}
+		if (K > 0 && third <= 9) {
+			while (third < 9 && K > 0) {
+				third += 1;
+				K--;
+			}
+
+		}
+
+		String temp3 = Integer.toString(first) + Integer.toString(second) + Integer.toString(third);
+
+		return Integer.parseInt(temp3);
+	}
+
+	public static int solution2(int N) {
+		if(N==1)
+			return 1;
+		int result = 0;
+		for (int i = 0; i < N / 2; i++) {
+			int num = (int)Math.pow(2, i);
+			if (N % num == 0) {
+				result = i;
+			}
+		}
+		return result;
+	}
+
 }

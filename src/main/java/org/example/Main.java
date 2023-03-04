@@ -9,5 +9,9 @@ public class Main {
         System.out.println(solution(1041));
         System.out.println(solution(328));
         System.out.println(solution(5));
+
+        //System.out.println(solution(512, 10));//expect; 972
+        //System.out.println(solution(191, 4)); //expect;591
+        //System.out.println(solution(285, 20)); // expect: 999
     }
 }
