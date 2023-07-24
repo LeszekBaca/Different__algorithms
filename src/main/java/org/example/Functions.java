@@ -363,12 +363,10 @@ public class Functions {
 			else if (i % 5 == 0) {
 				System.out.print(" ZAQ ");
 			} else
-				System.out.print(" " + i + " ");
+				System.out.print(" "+i+" ");
 		}
 	}
 	public static List<Person> name(List<Person> abc) {
 		return abc.stream().filter(a -> a.getAge() > 1).collect(Collectors.toList());
-
-
 	}
 }
