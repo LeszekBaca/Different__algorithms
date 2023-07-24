@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Functions {
 
 	public Functions() {
@@ -323,9 +326,9 @@ public class Functions {
 	}
 
 	public static int solution2(int N) {
+		int result = 0;
 		if(N==1)
 			return 1;
-		int result = 0;
 		for (int i = 0; i < N / 2; i++) {
 			int num = (int)Math.pow(2, i);
 			if (N % num == 0) {
@@ -334,5 +337,38 @@ public class Functions {
 		}
 		return result;
 	}
+	public static int binarySearch(int[] array, int a) {
 
+		int left = 0;
+		int right = array.length -1 ;
+		int mid = 0;
+
+		while (left <= right) {
+			mid = (int)(left + right)/2;
+			if (array[mid] == a)
+				return mid;
+			else if (array[mid] < a)
+				left = mid + 1;
+			else
+				right = mid - 1;
+
+		}
+		return -1;
+	}
+	public static void printText() {
+		for (int i = 1; i <= 100; i++) {
+
+			if (i % 3 == 0)
+				System.out.print(" ABC ");
+			else if (i % 5 == 0) {
+				System.out.print(" ZAQ ");
+			} else
+				System.out.print(" " + i + " ");
+		}
+	}
+	public static List<Person> name(List<Person> abc) {
+		return abc.stream().filter(a -> a.getAge() > 1).collect(Collectors.toList());
+
+
+	}
 }
